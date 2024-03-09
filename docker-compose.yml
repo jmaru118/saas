@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  nodejs:
+    image: node:latest
+    container_name: nodejs
+    working_dir: /usr/src/app
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./saas/:/usr/src/app"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
