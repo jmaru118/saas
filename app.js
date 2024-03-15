@@ -13,7 +13,7 @@ require('./models');
 
 
 var User = mongoose.model( 'User' );
-mongoose.connect('mongodb://localhost:27017/saas-db');
+mongoose.connect('mongodb://mongodb:27017/saas-db');
 
 // Stripe billing api
 const stripe = require('stripe')('sk_test_51Or7ruI2Fm500QbJ9heRvppgKPsJLaUU1mNCuGfbqVob3ekUJ5Fo7lzkYi4cSLZtiurvJhtlsi8nGftMH6HqndsU00tTM3EOdV');
